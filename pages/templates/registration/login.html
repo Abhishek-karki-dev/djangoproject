@@ -1,0 +1,52 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Rental System">
+    <meta name="author" content="Nirajan Bist">
+    <title>Rental System | Login </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'img/house.png' %}" sizes="32x32" type="image/png">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/floating-label.css' %}" rel="stylesheet">
+
+   </head>
+    
+  <body>
+    <form class="form-signin" method="POST">
+    {% csrf_token %} 
+  <div class="text-center mb-4">
+    <img class="mb-4" src="{% static 'img/login.png' %}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Login Rental System</h1>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" id="id_username" name="username" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputEmail">Username</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="id_password" name="password" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="mb-3">
+    {% if form.errors %}
+    <p class="text-danger"> Username or Password is wrong!!
+    {% endif %}
+   
+  </div>
+  <p> Not Registered? <a href="{% url 'signup' %}">Signup</a></p>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2020 TechAxis</p>
+</form>
+</body>
+</html>
