@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 from .forms import SignUpForm
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView, TemplateView
+from .models import Property
+from .forms import PropertyForm
 # Create your views here.
 
 
@@ -34,3 +37,10 @@ def signup(request):
 
 def login(request):
     return render(request, 'login.html')
+
+class PropertyCreateView(CreateView):
+    model = Property
+    form_class = PropertyForm
+    # template_name = ""
+
+    

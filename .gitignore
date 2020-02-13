@@ -121,4 +121,5 @@ dmypy.json
 
 #custom
 .vscode
+.idea
 # End of https://www.gitignore.io/api/django
