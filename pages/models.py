@@ -1,5 +1,5 @@
 from django.db import models
-from django.shortcuts import redirect
+from django.shortcuts import redirect,reverse
 
 # Create your models here.
 class Property(models.Model):
@@ -20,4 +20,4 @@ class Property(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return redirect('home')
+        return reverse('home')
