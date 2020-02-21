@@ -9,18 +9,21 @@ from .forms import PropertyForm
 # Create your views here.
 
 
-def home(request):
-    # data = [{
-    #     'id':1,
-    #     'name':'Ram'
-    # },
-    # {
-    #     'id':2,
-    #     'name':'Hari'
-    # }]
-    # context = {'data':data}
-    return render(request, 'index.html')
+# def home(request):
+#     # data = [{
+#     #     'id':1,
+#     #     'name':'Ram'
+#     # },
+#     # {
+#     #     'id':2,
+#     #     'name':'Hari'
+#     # }]
+#     # context = {'data':data}
+#     return render(request, 'index.html')
 
+class home(ListView):
+    model = Property
+    template_name = "index.html"
 
 def signup(request):
     if request.user.is_authenticated:

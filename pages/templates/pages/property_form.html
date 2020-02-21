@@ -3,7 +3,7 @@
 {% block content %}
 <div class='container' style="margin-top:6em;width:50%">
   <br><h2>Create a New Property</h2>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|crispy }}
     <div class="text-center">
